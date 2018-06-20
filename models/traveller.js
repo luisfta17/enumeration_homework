@@ -24,11 +24,17 @@ Traveller.prototype.getModesOfTransport = function () {
 };
 
 Traveller.prototype.getJourneysByTransport = function (transport) {
-
+  const arrayOfTypeTransport = this.journeys.filter((journey) => {
+    return journey.transport === transport;
+  })
+  return arrayOfTypeTransport;
 };
 
 Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
-
+  const arrayOfMinDistance = this.journeys.filter((journey) => {
+    return journey.distance >= minDistance;
+  })
+  return arrayOfMinDistance;
 };
 
 Traveller.prototype.calculateTotalDistanceTravelled = function () {
